@@ -46,6 +46,67 @@ ul {
 	margin-left: auto;
 	margin-right: auto;
 }
+/*MODAL*/
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+
+	background: rgba(0, 0, 0, 0.2);
+	transition: var(--transition-function);
+
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.modal {
+
+	height: 581px;
+	width: 528px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	background: #FFFFFF;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.modal > button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	margin: 0;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	width: 30px;
+	height: 30px;
+	padding: 9px;
+	cursor: pointer;
+
+}
+
+.modal .close-button {
+	display: block;
+	min-width: 18px;
+	min-height: 18px;
+}
+
+
+
+
 /*HEADER*/
 
 #header {
@@ -208,14 +269,14 @@ nav li:not(:first-child) {
 	text-align: center;
 	letter-spacing: 0.06em;
 	color: var(--hero-text-color);
+	background: var(--hero-button-bg);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-color: var(--hero-button-bg-activ);
 	border-radius: 4px;
+	cursor: pointer;
 }
 
 /* изменение фона при наведении на кнопку*/
-.block-hero button {
-	background: var(--hero-button-bg);
-}
 
 .block-hero button:hover,
 .block-hero button:focus {
