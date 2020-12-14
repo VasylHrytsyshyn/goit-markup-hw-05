@@ -62,14 +62,43 @@ nav {
 	display: flex;
 }
 
+.navygation li {
+	position: relative;
+}
+
+.navygation .activ::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 4px;
+	
+	border-radius: 2px ;
+	background-color: var(--acent-text-color-navigation);
+
+}
+
 .navygation {
 	display: flex;
-	margin-left: 93px;
+	/*margin-left: 93px;
+	padding-bottom: 32px;
+	padding-top: 32px;*/
+}
+
+.navygation a {
+	display: block;
+	padding-bottom: 32px;
+	padding-top: 32px;*
+
 }
 
 .contact-us {
 	display: flex;
 	margin-left: 305px;
+
+	padding-bottom: 32px;
+	padding-top: 32px;	
 }
 
 .logo-header {
