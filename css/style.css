@@ -12,7 +12,6 @@
 	--gradient-color: rgba(47, 48, 58, 0.4);
 	--icon-footer-bg: rgba(255, 255, 255, 0.1);
 	--icon-team-color: #AFB1B8;
-	--transition-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -190,18 +189,28 @@ nav li:not(:first-child) {
 
 .navygation a,
 .contact-us a {
-
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
+
 }
 .navygation a {
 	color: var(--primary-text-color);
+
+	transition-property: color;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 .contact-us  a {
 	color: var(--secondary-text-color);
+
+	transition-property: color, fill;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 .navygation a:hover,
@@ -210,13 +219,13 @@ nav li:not(:first-child) {
 .contact-us a:focus  {
 	color: var(--acent-text-color-navigation);
 	fill: var(--acent-text-color-navigation);
-	transition: var(--transition-function);
 }
 
-.contact-us-list a{
+.contact-us-list {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .contact-us-icon {
@@ -271,10 +280,15 @@ nav li:not(:first-child) {
 	letter-spacing: 0.06em;
 	color: var(--hero-text-color);
 	background: var(--hero-button-bg);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	/*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);*/
 	border-color: var(--hero-button-bg-activ);
 	border-radius: 4px;
 	cursor: pointer;
+
+	transition-property: background, box-shadow;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 /* изменение фона при наведении на кнопку*/
@@ -282,7 +296,7 @@ nav li:not(:first-child) {
 .block-hero button:hover,
 .block-hero button:focus {
 	background: var(--hero-button-bg-activ);
-	transition: var(--transition-function);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*end HERO*/
@@ -514,8 +528,6 @@ nav li:not(:first-child) {
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
-	background: #ffffff;
-	fill: var(--icon-team-color);
 }
 
 .social-list-team a {
@@ -525,13 +537,19 @@ nav li:not(:first-child) {
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
+	background: #ffffff;
+	fill: var(--icon-team-color);
+
+	transition-property: background-color, fill;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 .social-list-team a:focus,
-.social-list-team > li:hover {
+.social-list-team a:hover {
 	background-color: var(--hero-button-bg);
 	fill: var(--hero-text-color);
-	transition: var(--transition-function);
 }
 
 /*regular-customers*/
@@ -572,13 +590,17 @@ nav li:not(:first-child) {
 	border-radius: 4px;
 	fill:  #AFB1B8;
 	cursor: pointer;
+
+	transition-property: border-color, fill;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 .regular-customers-list a:focus,
-.regular-customers-list  a:hover {
+.regular-customers-list a:hover {
 	border-color: var(--hero-button-bg);
 	fill: var(--hero-button-bg);
-	transition: var(--transition-function);
 }
 /*end regular-customers*/
 
@@ -681,8 +703,6 @@ footer {
    align-items: center;
 	width: 44px;
 	height: 44px;
-	background-color: var(--icon-footer-bg);
-	border-radius: 50%;
 }
 
 .social-list a {
@@ -692,12 +712,17 @@ footer {
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
+	background-color: var(--icon-footer-bg);
+
+	transition-property: background-color;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 .social-list a:focus,
-.social-list > li:hover {
+.social-list a:hover {
 	background-color: var(--hero-button-bg);
-	transition: var(--transition-function);
 }
 
 
@@ -742,18 +767,20 @@ a.activ {
 	background: var(--filter-bg-color);
 	border-radius: 4px;
 	padding: 6px 22px;
+
+	transition-property: color, box-shadow, background;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
+
 .filters a:hover,
 .filters a:focus {		
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 1.62;
-	letter-spacing: 0.03em;
+
 	color: var(--hero-text-color);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-
 	background: var(--acent-text-color-navigation);
-	transition: var(--transition-function);
+
 }
 
 /*END ФИЛЬТР*/
@@ -804,12 +831,16 @@ a.activ {
 	letter-spacing: 0.03em;
 	background-color: rgba(33, 150, 243, 0.9);
 	color: var(--hero-text-color);
+
+	transition-property: transform;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
 }
 
 .project-card > a:focus .project-image-overlay,
 .project-card > a:hover  .project-image-overlay {
 	transform: translateY(0);
-	transition: var(--transition-function);
 }
 /*--*/
 .project-content {
@@ -846,12 +877,17 @@ a.activ {
 	display: block;
 	width: 100%;
 	height: 100%;
+
+	transition-property: box-shadow;
+	transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0;
+	
 }
 
 .project-card > a:focus,
 .project-card > a:hover {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-	transition: var(--transition-function);
 }
 
 /* END НАШИ ПРОЕКТЫ*/
